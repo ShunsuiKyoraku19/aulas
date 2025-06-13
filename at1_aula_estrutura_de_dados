@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+
+#define MAX_LINE 128
+#define MAX_ID 32
+#define MAX_VALUE 32
+
+typedef struct {
+    long timestamp;
+    char id[MAX_ID];
+    char value[MAX_VALUE];
+} Reading;
+
+long labs_long(long a) {
+    return a < 0 ? -a : a;
+}
+
+int main(int argc, char *argv[]) {
+    if (argc != 3) {
+        printf("Uso: %s <nome_sensor> <timestamp>\n", argv[0]);
+        return 1;
+    }
+
+    char *sensor = argv[1];
+    long target = atol(argv[2]);
+    char filename[64];
+    snprintf(filename, sizeof(filename), "%s.txt", sensor);
+
+    FILE *f = fopen(filename, "r");
+    if (!f) {
+        printf("Arquivo do sensor não encontrado: %s\n", filename);
+        return 1;
+    }
+
+    int n = 0;
+    char line[MAX_LINE];
+    while (fgets(line, sizeof(line), f)) n++;
+    if (n == 0) {
+        printf("Nenhuma leitura encontrada para o sensor.\n");
+        fclose(f);
+        return 1;
+    }
+    rewind(f);
+
+    Reading *readings = malloc(n * sizeof(Reading));
+    int i = 0;
+    while (fgets(line, sizeof(line), f)) {
+        sscanf(line, "%ld %31s %31s", &readings[i].timestamp, readings[i].id, readings[i].value);
+        i++;
+    }
+    fclose(f);
+
+    int left = 0, right = n - 1, best = 0;
+    long best_diff = labs_long(readings[0].timestamp - target);
+
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        long diff = labs_long(readings[mid].timestamp - target);
+        if (diff < best_diff) {
+            best = mid;
+            best_diff = diff;
+        }
+        if (readings[mid].timestamp < target)
+            left = mid + 1;
+        else if (readings[mid].timestamp > target)
+            right = mid - 1;
+        else {
+            best = mid;
+            break;
+        }
+    }
+
+    printf("Leitura mais próxima:\n");
+    printf("Timestamp: %ld\n", readings[best].timestamp);
+    printf("Sensor: %s\n", readings[best].id);
+    printf("Valor: %s\n", readings[best].value);
+
+    free(readings);
+    return 0;
+}
