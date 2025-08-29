@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper-Scisor-Rock</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Pedra/Papel/Tesoura</h1>
+    <h3 id="frase">Escolha uma opção:</h3>
+
+    <div id="area-escolha">
+        <img id="Pedra" onclick="select(0)" src="img/Rock.png">
+        <img id="Tesoura" onclick="select(1)" src="img/Scissors.png">
+        <img id="Papel" onclick="select(2)" src="img/Paper.png">
+    </div>
+
+    <div id="area-resultado">
+        <img id="jogador" src="img/Paper.png" >
+        <img id="computador" src="img/Rock-pc.png" >
+        <br>
+        <button id="botao" onclick="location.reload(true)">Recomeçar</button>
+
+    </div>
+
+
+
+
+
+
+<script src="Paper_scisor_rock.js"></script>
+ 
+</body>
+</html>
