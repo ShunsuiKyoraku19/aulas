@@ -57,26 +57,36 @@ function select(escolhaJogador){
             return false;
         }
 
-        switch(escolhaJogador){
-            case 0://escolheu pedra
-            escolhaComputador === 0 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
-            botao.style.display = 'block';
-            break;
-
-            case 1://escolheu papel
-            escolhaComputador === 2 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
-            botao.style.display = 'block';
-            break;
-
-            case 2://escolheu tesoura
-            escolhaComputador === 1 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
-            botao.style.display = 'block';
-            break;
-
+       if(escolhaJogador === 0 && escolhaComputador === 1){
+                frase.textContent = "Jogador venceu!";
+            }
+             botao.style.display = 'block';
+            if(escolhaJogador === 1 && escolhaComputador === 0){
+                frase.textContent = "Computador venceu!";
+            }
+             botao.style.display = 'block';
+            if(escolhaJogador === 1 && escolhaComputador === 2){
+                frase.textContent = "Jogador venceu!";
+            }
+             botao.style.display = 'block';
+            if(escolhaJogador === 2 && escolhaComputador === 1){
+                frase.textContent = "Computador venceu!";
+            }
+             botao.style.display = 'block';
+            if(escolhaJogador === 2 && escolhaComputador === 0){
+                frase.textContent = "Jogador venceu!";
+            }
+             botao.style.display = 'block';
+            if(escolhaJogador === 0 && escolhaComputador === 2){
+                frase.textContent = "Computador venceu!";
+            }
+             botao.style.display = 'block';
+        
             default:
                 alert("Escolha invalida");
         }
        
     }, 3000);
 }
+
 
