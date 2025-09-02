@@ -59,17 +59,17 @@ function select(escolhaJogador){
 
         switch(escolhaJogador){
             case 0://escolheu pedra
-            escolhaComputador === 0 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
+            escolhaJogador === 0 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
             botao.style.display = 'block';
             break;
 
             case 1://escolheu papel
-            escolhaComputador === 2 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
+            escolhaJogador === 2 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
             botao.style.display = 'block';
             break;
 
             case 2://escolheu tesoura
-            escolhaComputador === 1 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
+            escolhaJogador === 1 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
             botao.style.display = 'block';
             break;
 
