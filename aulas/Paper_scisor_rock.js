@@ -72,7 +72,7 @@ function select(escolhaJogador){
             escolhaComputador === 1 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
             botao.style.display = 'block';
             break;
-            
+
             default:
                 alert("Escolha invalida");
         }
