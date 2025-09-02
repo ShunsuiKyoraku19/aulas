@@ -7,8 +7,9 @@ var botao = document.getElementById("botao");
 var areaEscolha = document.getElementById("area-escolha");
 var areaResultado = document.getElementById("area-resultado");
 
-var imagens_jogador = ["img/Rock.png", "img/Paper.png", "img/Scissors.png"];
-var imagens_computador = ["img/Rock-pc.png", "img/Paper-pc.png", "img/Scissors-pc.png"];
+var imagens_jogador = ["img/Rock.png", "img/Scissors.png", "img/Paper.png"];
+var imagens_computador = ["img/Rock-pc.png", "img/Scissors-pc.png", "img/Paper-pc.png"];
+
 
 var index = 0;
 
@@ -24,6 +25,7 @@ function effect(){
 var efeito = setInterval(effect, 100);
 
 function select(escolhaJogador){
+
     areaEscolha.style.display = 'none';
 
     areaResultado.style.display = 'block';
@@ -43,9 +45,10 @@ function select(escolhaJogador){
 
     setTimeout(() => {
         var escolhaComputador = Math.floor(Math.random() * 3);
+        console.log(escolhaComputador);
         
         computador.src = imagens_computador[escolhaComputador];
-        jogador.src = imagens_jogador[escolhaJogador];
+         jogador.src = imagens_jogador[escolhaJogador];
 
         if(escolhaJogador === escolhaComputador){
             frase.textContent = 'Empatou!';
@@ -56,20 +59,21 @@ function select(escolhaJogador){
 
         switch(escolhaJogador){
             case 0://escolheu pedra
-            escolhaComputador === 2 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
+            escolhaComputador === 0 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!"
             botao.style.display = 'block';
             break;
             case 1://escolheu papel
-            escolhaComputador === 0 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
+            escolhaComputador === 2 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!"
             botao.style.display = 'block';
             break;
             case 2://escolheu tesoura
-            escolhaComputador === 1? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!";
+            escolhaComputador === 1 ? frase.textContent = "Jogador venceu!" : frase.textContent = "Computador venceu!"
             botao.style.display = 'block';
             break;
             default:
                 alert("Escolha invalida");
         }
+       
     }, 3000);
 }
 
