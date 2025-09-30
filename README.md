@@ -1,6 +1,6 @@
 # Quiz de Personagens - JavaScript Orientado a Objetos 🧠✨
 
-Este é um projeto de **quiz interativo** que identifica com qual personagem fictício o usuário mais se parece, com base em um questionário de 10 perguntas.
+Este é um projeto de **quiz interativo** que identifica com qual personagem fictício o usuário mais se parece, com base em um questionário de 5 perguntas.
 
 O projeto foi desenvolvido utilizando **JavaScript (com orientação a objetos)**, além de **HTML e CSS** para estrutura e estilo. É totalmente funcional no navegador, sem necessidade de instalação de dependências externas.
 
@@ -35,15 +35,9 @@ O projeto foi desenvolvido utilizando **JavaScript (com orientação a objetos)*
 
 Este projeto foi desenvolvido em grupo como parte de uma atividade avaliativa da disciplina de Programação Web.
 
-- [Lara Ewellen](https://github.com/Laraewellen)
-- [Luiza lima](https://github.com/luizalima13)
-- [Júlia Gabriela](https://github.com/Julia-Gabriela)
-
----
-
-## 📷 Demonstração
-
-![screenshot do projeto](./imagens/Quiz_de_Personagens.gif)
+- [Maxwell Lucas](https://github.com/ShunsuiKyoraku19)
+- [Mateus Vinicius](https://github.com/Freezycode)
+- [Lucas Samuel](https://github.com/)
 
 ---
 
@@ -51,10 +45,10 @@ Este projeto foi desenvolvido em grupo como parte de uma atividade avaliativa da
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/quiz-personalidade-javascript.git
+   git clone https://github.com/ShunsuiKyoraku19/aulas.git
 2. Acesse a pasta do projeto:
      ```bash
-   cd quiz-personalidade-javascript
+   cd nome do projeto
 3. Execute o projeto abrindo o arquivo index.html no seu navegador:
 
 - Clique duas vezes no arquivo index.html
@@ -73,3 +67,4 @@ Este projeto foi desenvolvido em grupo como parte de uma atividade avaliativa da
 - script.js → Lógica do quiz e interação com o DOM
 
 - imagens/ → Avatares dos personagens e fundo da página
+
